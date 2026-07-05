@@ -1,7 +1,5 @@
 import myImage from "../img/goblin.png";
 
-
-
 export default class NewPicture {
   constructor() {
     this.parentEl = document.querySelector(".container");
@@ -9,7 +7,7 @@ export default class NewPicture {
     this.position = 0;
     this.picture = document.createElement("img");
     this.picture.src = myImage;
-    this.picture.alt = 'Goblin'
+    this.picture.alt = "Goblin";
     this.picture.className += "imager";
     this.sells_count = 16;
     this.repiat = 5;

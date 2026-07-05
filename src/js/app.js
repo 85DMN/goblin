@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, interval);
 
+  const liner = [];
 
   for (let i = 0; i < evend; i++) {
     liner.push(document.getElementById(`line${i + 1}`));
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (Number(finer.textContent) > 4) {
           lastic();
-          clearInterval(timez)
+          clearInterval(timez);
           alert("Вы победили!!!");
         }
       }
