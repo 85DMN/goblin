@@ -7,6 +7,7 @@ export default class NewPicture {
     this.position = 0;
     this.picture = document.createElement("img");
     this.picture.src = myImage;
+    this.picture.alt = 'Goblin'
     this.picture.className += "imager";
   }
 
