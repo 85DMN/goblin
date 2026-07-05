@@ -1,10 +1,12 @@
+import myImage from "../img/goblin.png";
+
 export default class NewPicture {
   constructor() {
     this.parentEl = document.querySelector(".container");
     this.bindToDOM();
     this.position = 0;
     this.picture = document.createElement("img");
-    this.picture.src = "./src/img/goblin.png";
+    this.picture.src = myImage;
     this.picture.className += "imager";
   }
 
@@ -71,13 +73,12 @@ export default class NewPicture {
 
   addPicture() {
     for (let i = 0; i < 5; i++) {
-      const positionz = Math.floor(Math.random() * 16);
-      if (positionz != this.position) {
-        //проверка предыдущего положения картинки
+      const posit = Math.floor(Math.random() * 16);
+      if (posit != this.position) {
         const cells = document.querySelectorAll(".cell");
         this.clearImage();
-        cells[positionz].appendChild(this.picture);
-        this.position = positionz;
+        cells[posit].insertBefore(this.picture, cells[posit].firstChild);
+        this.position = posit;
         break;
       }
     }
