@@ -1,5 +1,7 @@
 import myImage from "../img/goblin.png";
 
+
+
 export default class NewPicture {
   constructor() {
     this.parentEl = document.querySelector(".container");
@@ -9,6 +11,8 @@ export default class NewPicture {
     this.picture.src = myImage;
     this.picture.alt = 'Goblin'
     this.picture.className += "imager";
+    this.sells_count = 16;
+    this.repiat = 5;
   }
 
   static get markup() {
@@ -73,8 +77,8 @@ export default class NewPicture {
   }
 
   addPicture() {
-    for (let i = 0; i < 5; i++) {
-      const posit = Math.floor(Math.random() * 16);
+    for (let i = 0; i < this.repiat; i++) {
+      const posit = Math.floor(Math.random() * this.sells_count);
       if (posit != this.position) {
         const cells = document.querySelectorAll(".cell");
         this.clearImage();

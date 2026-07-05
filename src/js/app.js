@@ -1,5 +1,8 @@
 import NewPicture from "./jumper";
 
+const interval = 1000;
+const evend = 5;
+
 document.addEventListener("DOMContentLoaded", () => {
   const widget = new NewPicture(document.querySelectorAll(".cell"));
 
@@ -10,19 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementsByClassName("fine")[0].textContent = 0;
   }
 
-  setInterval(() => {
+  const timez = setInterval(() => {
     widget.addPicture();
 
     const badler = document.getElementsByClassName("mistake")[0];
     badler.textContent = Number(badler.textContent) + 1;
     if (Number(badler.textContent) > 4) {
       lastic();
+      clearInterval(timez);
       alert("Вы проиграли!!!");
     }
-  }, 1000);
+  }, interval);
 
-  const liner = [];
-  for (let i = 0; i < 5; i++) {
+
+  for (let i = 0; i < evend; i++) {
     liner.push(document.getElementById(`line${i + 1}`));
   }
 
@@ -38,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (Number(finer.textContent) > 4) {
           lastic();
+          clearInterval(timez)
           alert("Вы победили!!!");
         }
       }
